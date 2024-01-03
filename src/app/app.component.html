@@ -1,0 +1,20 @@
+<div style="padding: 20px;">
+  <select [(ngModel)]="selectedCount">
+    <option selected>10</option>
+    <option>50</option>
+    <option>100</option>
+    <option>250</option>
+    <option>500</option>
+    <option>1000</option>
+  </select>
+  &nbsp;
+  <button (click)="onClick()">Update</button>
+
+  <p></p>
+
+  @for (item of names; track $index) {
+  <div>
+    {{item}}
+  </div>
+  }
+</div>
