@@ -17,19 +17,19 @@ export class AppComponent {
   title = 'randmon-name-client';
 
   constructor(private randomNameService: RandomNameService) {
-    this.update(10);
+    this.update();
   }
 
-  selectedCount = 10;
+  selectedCount: number = 50;
   names: string[] = [];
 
   onClick() {
-    this.update(this.selectedCount)
+    this.update();
   }
 
-  update(count: number) {
+  update() {
     this.randomNameService
-      .getList(count)
+      .getList(this.selectedCount)
       .pipe(first())
       .subscribe(s => this.names = s);
   }
